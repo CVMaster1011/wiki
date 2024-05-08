@@ -1,5 +1,6 @@
 package com.longlong.wiki.config;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -10,6 +11,7 @@ import org.springframework.core.env.Environment;
 // 默认扫描启动类所在包下的子包
 @ComponentScan("com.longlong")
 @SpringBootApplication
+@MapperScan("com.longlong.wiki.mapper")
 public class WikiApplication {
 
 
