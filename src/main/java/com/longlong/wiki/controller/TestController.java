@@ -1,9 +1,9 @@
 package com.longlong.wiki.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 // 返回字符串
 @RestController
@@ -11,6 +11,9 @@ import java.util.Map;
 // 返回页面
 // @Controller
 public class TestController {
+
+    @Value("${test.hello}")
+    private String testHello;
     /**
      * GET, POST, PUT, DELETE
      * @return
@@ -24,7 +27,7 @@ public class TestController {
 //    @PutMapping
 //    @DeleteMapping
     public String hello(){
-        return "Hello World!";
+        return "Hello World!" + testHello;
     }
 
     @PostMapping("/hello/post")
