@@ -1,11 +1,14 @@
-package com.longlong.wiki;
+package com.longlong.wiki.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
 
+// 默认扫描启动类所在包下的子包
+@ComponentScan("com.longlong")
 @SpringBootApplication
 public class WikiApplication {
 

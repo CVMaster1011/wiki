@@ -117,7 +117,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.longlong.wiki.WikiApplication</mainClass>
+                    <mainClass>com.longlong.wiki.config.WikiApplication</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>
