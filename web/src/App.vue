@@ -3,9 +3,9 @@
     <a-layout-header class="header">
       <div class="logo" />
       <a-menu
+          v-model:selectedKeys="selectedKeys1"
           theme="dark"
           mode="horizontal"
-          v-model:selectedKeys="selectedKeys1"
           :style="{ lineHeight: '64px' }"
       >
         <a-menu-item key="1">nav 1</a-menu-item>
@@ -16,9 +16,9 @@
     <a-layout>
       <a-layout-sider width="200" style="background: #fff">
         <a-menu
-            mode="inline"
             v-model:selectedKeys="selectedKeys2"
             v-model:openKeys="openKeys"
+            mode="inline"
             :style="{ height: '100%', borderRight: 0 }"
         >
           <a-sub-menu key="sub1">
@@ -60,18 +60,24 @@
         </a-menu>
       </a-layout-sider>
       <a-layout-content
-          :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }"
-      >
-        Content
-      </a-layout-content>
+        :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }"
+    >
+      Content
+    </a-layout-content>
     </a-layout>
     <a-layout-footer style="text-align: center">
-      Ant Design ©2018 Created by Ant UED
+      longlong电子书
     </a-layout-footer>
   </a-layout>
 </template>
-
-<style>
+<script lang="ts" setup>
+import { ref } from 'vue';
+import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons-vue';
+const selectedKeys1 = ref<string[]>(['2']);
+const selectedKeys2 = ref<string[]>(['1']);
+const openKeys = ref<string[]>(['sub1']);
+</script>
+<style scoped>
 #components-layout-demo-top-side-2 .logo {
   float: left;
   width: 120px;
